@@ -1,0 +1,6 @@
+.CardUsers{
+    display: grid;
+    grid-template-columns: 5fr 5fr 5fr 5fr;
+    gap: 30px;
+    margin: 10px;
+}
