@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import CardUser from '../CardUser/CardUser';
 import "./ItemListContainer.css";
 import {Link} from "react-router-dom";
 
+//Import Component
+import CardUser from '../CardUser/CardUser';
+
 //Import Firebase
-import { db } from './firebase/FirebaseConfig';
+import { db } from '../../firebase/FirebaseConfig';
 import { collection, query, getDocs } from "firebase/firestore";
 
 
@@ -18,18 +20,26 @@ const ItemListContainer = () => {
                 const querySnapshot = await getDocs(q);
                 const docs = [];
                 querySnapshot.forEach((doc) => {
-                // console.log(doc.data())
-                // doc.data() is never undefined for query doc snapshots
-                // console.log(doc.id, " => ", doc.data());
                 docs.push({...doc.data(), id: doc.id})
             });
-            console.log(docs)
+            setVitamins(docs)
             }
         getVitamins();
     }, [])
 
     return (
-        <div></div>
+        <div className='CardUsers'>
+            {vitamins.map(vitamin => {
+                return(
+                    <div key={vitamin.id}> 
+                        <Link to={`/item/${vitamin.id}`}>
+                            <CardUser data={vitamin}/>
+                        </Link>
+                    </div>
+                    
+                )
+            })}
+        </div>
     )
 }
 

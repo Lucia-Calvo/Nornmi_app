@@ -5,27 +5,24 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
-import Img from "./Nornmi-2.png";
-
 const CardUser = ({data}) => {
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ width: 400, height:850 }}>
         <CardActionArea>
             <CardMedia
             component="img"
-            height="140"
-            image={Img}
-            alt="green iguana"
+            image={data.Img}
+            alt="vitamis"
             />
             <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-                {data.name}
+                {data.Product}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-                {data.email}
+                {data.Description}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-                {data.phone}
+            <Typography variant="h6" sx={{paddingTop:1}}>
+                ${data.Price}
             </Typography>
             </CardContent>
         </CardActionArea>

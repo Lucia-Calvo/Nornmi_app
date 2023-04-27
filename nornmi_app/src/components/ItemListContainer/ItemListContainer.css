@@ -1,6 +1,12 @@
 .CardUsers{
     display: grid;
-    grid-template-columns: 5fr 5fr 5fr 5fr;
-    gap: 30px;
-    margin: 10px;
-}
+    grid-template-columns: 6fr 6fr 6fr;
+    gap: 10px;
+    margin: 15px;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}  
+
+
+
