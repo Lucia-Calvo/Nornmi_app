@@ -1,0 +1,26 @@
+*{
+    font-family: 'Raleway', sans-serif;
+}
+
+.CardContainer{
+    width: 100vw;
+    height: 100vh;
+    border-bottom: 2px solid #435C52;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.CardContainer h1{
+    font-size: 75px;
+    color: #435C52;
+    padding: 0px 20px 40px 50px;
+    text-indent: 100px;
+}
+
+.CardContainer p{
+    font-size: 18px;
+    color: #435C52;
+    width: 45vw;
+    padding: 15px 0px 0px 50px;
+}

@@ -1,0 +1,53 @@
+*{
+    font-family:'Raleway', sans-serif ;
+}
+
+.Carousel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #435C52;
+    height: 100vh;
+}
+
+.Container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Img-clarity{
+    width: 40vw;
+    height: 90vh;
+    object-fit: cover;
+}
+
+.Bkg-clarity{
+    float: right;
+    width: 20vw;
+    height: 90vh;
+    shape-outside: circle(50% at 30%);
+    clip-path: circle(45% at 130%);
+    background: #FDA67A;
+}
+
+.Container div{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.Title-clarity{
+    /* position: relative;
+    bottom: 140px; */
+    font-size: 75px;
+    padding-left: 40px;
+    color: #FDA67A;
+}
+
+.Ttx-clarity{
+    width: 45vw;
+    padding-left: 40px;
+    padding-top: 30px;
+    text-align: justify;
+}

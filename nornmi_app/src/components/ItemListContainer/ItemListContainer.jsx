@@ -1,27 +1,35 @@
-import React, {useEffect, useState} from 'react';
-import axios from "axios";
+import React, {useState, useEffect} from 'react';
 import CardUser from '../CardUser/CardUser';
 import "./ItemListContainer.css";
 import {Link} from "react-router-dom";
 
+//Import Firebase
+import { db } from './firebase/FirebaseConfig';
+import { collection, query, getDocs } from "firebase/firestore";
+
+
 const ItemListContainer = () => {
-    const [users, setUsers] = useState([]);
+    const [vitamins, setVitamins] = useState([]);
+
+    const q = query(collection(db, "Vitamins"));
 
     useEffect(() => {
-        axios("https://jsonplaceholder.typicode.com/users").then((res) => 
-        setUsers(res.data))
+        const getVitamins = async() => {
+                const querySnapshot = await getDocs(q);
+                const docs = [];
+                querySnapshot.forEach((doc) => {
+                // console.log(doc.data())
+                // doc.data() is never undefined for query doc snapshots
+                // console.log(doc.id, " => ", doc.data());
+                docs.push({...doc.data(), id: doc.id})
+            });
+            console.log(docs)
+            }
+        getVitamins();
     }, [])
 
     return (
-        <div className="CardUsers">
-            {users.map((user) => {
-                return (
-                    <div className='CardContainer' key={user.id}>
-                        <Link to={`/item/${user.id}`}><CardUser data={user}/></Link>
-                    </div>
-                )
-            })}
-        </div>
+        <div></div>
     )
 }
 
