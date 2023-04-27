@@ -1,37 +1,36 @@
-import React, { useEffect, useState } from 'react';
-import DetailUser from '../../components/DetailUser/DetailUser';
-
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import DetailUser from "../../components/DetailUser/DetailUser";
+import { useParams } from "react-router-dom";
 
 //Import Firebase
-import { db } from '../../firebase/FirebaseConfig';
-import { collection, query, getDocs, where, documentId } from "firebase/firestore";
-
+import { db } from "../../firebase/FirebaseConfig";
+import { doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-    let {id} = useParams();
+    let { id } = useParams();
     const [vitamin, setVitamin] = useState({});
-    const q = query(collection(db, "Vitamins"), where(documentId(),"==", id));
 
     useEffect(() => {
-        const getVitamins = async() => {
-                const querySnapshot = await getDocs(q);
-                const docs = [];
-                querySnapshot.forEach((doc) => {
-                docs.push({...doc.data(), id: doc.id})
-            });
-            setVitamin(docs)
+        const getVitamin = async () => {
+            const vitaminRef = doc(db, "Vitamins", id);
+            const vitaminDoc = await getDoc(vitaminRef);
+            if (vitaminDoc.exists()) {
+                setVitamin(vitaminDoc.data());
+            } else {
+                console.log("No existe el documento con el id proporcionado.");
             }
-        getVitamins();
-    }, [])
+        };
+        getVitamin();
+    }, [id]);
+    
 
     return (
         <div className='CardUsers'>
-            <div key={vitamin.id}> 
-                <DetailUser data={vitamin}/>
+            <div key={vitamin.id}>
+                <DetailUser data={vitamin} />
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;
