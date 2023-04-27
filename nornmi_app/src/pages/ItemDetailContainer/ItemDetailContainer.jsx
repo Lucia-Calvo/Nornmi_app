@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import CardUser from '../../components/CardUser/CardUser';
+import DetailUser from '../../components/DetailUser/DetailUser';
 
 import { useParams } from 'react-router-dom';
 
@@ -28,7 +28,7 @@ const ItemDetailContainer = () => {
     return (
         <div className='CardUsers'>
             <div key={vitamin.id}> 
-                <CardUser data={vitamin}/>
+                <DetailUser data={vitamin}/>
             </div>
         </div>
     )

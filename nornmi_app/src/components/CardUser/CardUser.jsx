@@ -12,7 +12,7 @@ const CardUser = ({data}) => {
             <CardMedia
             component="img"
             image={data.Img}
-            alt="vitamis"
+            alt="vitamins"
             />
             <CardContent>
             <Typography gutterBottom variant="h5" component="div">
