@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import DetailUser from "../../components/DetailUser/DetailUser";
+import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 
 //Import Firebase
@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
     return (
         <div className='CardUsers'>
             <div key={vitamin.id}>
-                <DetailUser data={vitamin} />
+                <ItemDetail data={vitamin} />
             </div>
         </div>
     );

@@ -12,21 +12,28 @@ import ItemDetailContainer from './pages/ItemDetailContainer/ItemDetailContainer
 
 //Import components
 import NavBar from "./components/NavBar/NavBar"; 
+import Cart from './components/Cart/Cart';
+
+//Import context
+// import { CartProvider } from './context/CartContext';
 
 const App = () => {
   return(
-    <Router>
-      <div className='App'>
-        <NavBar />
-        <Routes> 
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/item/:id" element={<ItemDetailContainer />} />  
-        </Routes>
-      </div>
-    </Router>
+
+      <Router>
+        <div className='App'>
+          <NavBar />
+          <Routes> 
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/item/:id" element={<ItemDetailContainer />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </div>
+      </Router>
+
   )   
 }
 

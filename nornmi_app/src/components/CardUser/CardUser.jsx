@@ -6,9 +6,6 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
 const CardUser = ({data}) => {
-    const onAddProduct = () => {
-        console.log("add")
-    }
 
     return (
         <Card sx={{ width: 400, height:850,}}>
@@ -28,7 +25,6 @@ const CardUser = ({data}) => {
             <Typography variant="h6" sx={{paddingTop:1}}>
                 ${data.Price}
             </Typography>
-            <button>Add to Cart</button>
             </CardContent>
         </CardActionArea>
         </Card>
