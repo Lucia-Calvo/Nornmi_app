@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
             const vitaminRef = doc(db, "Vitamins", id);
             const vitaminDoc = await getDoc(vitaminRef);
             if (vitaminDoc.exists()) {
-                setVitamin(vitaminDoc.data());
+                setVitamin({id:vitaminDoc.id, ...vitaminDoc.data()});
             } else {
                 console.log("No existe el documento con el id proporcionado.");
             }

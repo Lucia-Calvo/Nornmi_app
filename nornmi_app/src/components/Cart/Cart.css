@@ -1,0 +1,75 @@
+*{
+    font-family: 'Raleway', sans-serif;
+}
+
+.CartContainer{
+    background-color: #435C52;
+    height: 85vh;
+}
+
+.EmptyCart{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+}
+
+.EmptyCart h2{
+    color: white;
+    font-size: 45px;
+    font-weight: lighter;
+}
+
+.EmptyCart h4{
+    color: white;
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+.EmptyCart button{
+    width: 15%;
+    height: 8%;
+    font-size: 18px;
+    border-radius: 30px;
+}
+
+.FullCart{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+.FullCart h2{
+    color: white;
+    font-size: 45px;
+    font-weight: lighter;
+}
+
+.FullCart span{
+    color: white;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.Btn{
+    width: 100%;
+    height: 100%;
+    margin: 5px;
+    font-size: 18px;
+    border-radius: 30px;
+}
+
+.ItemContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ItemContainer span{
+    margin: 5px;
+}

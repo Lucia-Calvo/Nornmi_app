@@ -16,7 +16,7 @@ const NavBar = () => {
                 <Link className="Navbar__link" to="/home">Home</Link>
                 <Link className="Navbar__link" to="/shop">Shop</Link>
                 <Link className="Navbar__link" to="/about">About us</Link>
-                <CartWidget />
+                <Link className="Navbar__link" to="/Cart"> <CartWidget /></Link>
             </ul>
         </nav>
     )

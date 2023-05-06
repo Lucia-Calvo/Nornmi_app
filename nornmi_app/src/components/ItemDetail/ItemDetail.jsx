@@ -22,25 +22,26 @@ const ItemDetail = ({data}) => {
 
     const navigate = useNavigate();
 
+    const {addToCart} = useCart();
+
     const onAdd = () => {
         let itemPurchase = {
-            Product,
-            Price,
+            name:data.Product,
+            price:data.Price,
             quantity: count
         }
         setBuy(true);
         addToCart(itemPurchase)
     };
 
-    const {addToCart} = useCart();
 
     return (
         <div className='DetailContainer'>
             <div className='CountContainer'>
-                <h3>Detalle de {data.Product}</h3>
+                <h3>Detail of {data.Product}</h3>
                 {buy ? <div>
                         <button className='btnShop' onClick={() => {navigate('/shop')}}>Continue Shopping</button>
-                        <button className='btnShop' onClick={() => {navigate('/cart')}}>Go to Shopping Cart</button>
+                        <button className='btnShop' onClick={() => {navigate('/cart')}}>Go to Cart</button>
                     </div>
                 : <ItemQuantitySelector count={count} setCount={setCount} onAdd={onAdd}/>}
             </div>
