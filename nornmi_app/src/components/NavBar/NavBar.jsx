@@ -3,11 +3,11 @@ import "./NavBar.css";
 import Logo from "./Nornmi-1.png";
 import CartWidget from '../CartWidget/CartWidget';
 import { Link } from "react-router-dom";
-// import { UseCart } from '../../context/CartContext';
+import { useCart } from '../../context/CartContext';
 
 
 const NavBar = () => {
-    // const {cart} =  UseCart();
+    const {cart} =  useCart();
 
     return (
         <nav className="Navbar">

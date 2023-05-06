@@ -15,11 +15,11 @@ import NavBar from "./components/NavBar/NavBar";
 import Cart from './components/Cart/Cart';
 
 //Import context
-// import { CartProvider } from './context/CartContext';
+import { CartProvider } from './context/CartContext';
 
 const App = () => {
   return(
-
+    <CartProvider>
       <Router>
         <div className='App'>
           <NavBar />
@@ -33,7 +33,7 @@ const App = () => {
           </Routes>
         </div>
       </Router>
-
+    </CartProvider>
   )   
 }
 
