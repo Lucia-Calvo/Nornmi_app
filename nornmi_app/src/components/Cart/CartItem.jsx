@@ -9,7 +9,7 @@ const CartItem = ({ compra }) => {
             <span>Product: {compra.name}</span>
             <span>Qty: {compra.quantity}</span>
             <span>Price: ${compra.price}</span>
-            <button className="Btn" onClick={() => removeItem2(compra.id)}> Clear item </button>
+            <button className="Btn button" onClick={() => removeItem2(compra.id)}> Clear item </button>
         </div>
     );
 };

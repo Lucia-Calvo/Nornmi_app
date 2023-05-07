@@ -28,6 +28,7 @@ const ItemDetail = ({data}) => {
         let itemPurchase = {
             name:data.Product,
             price:data.Price,
+            id: data.id,
             quantity: count
         }
         setBuy(true);

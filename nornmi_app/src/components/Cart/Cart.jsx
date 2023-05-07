@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import CartItem from './CartItem';
 import './Cart.css';
-import Checkout from '../../pages/Checkout/Checkout';
 
 const Cart = () => {
     const { cart, cartTotal, emptyCart} = useCart();
@@ -27,7 +26,7 @@ const Cart = () => {
                 <span>Total : ${cartTotal()}</span>
                 <div className='btnContainer'>
                     <button className='Btn' onClick={emptyCart}> Clear bag </button>
-                    <button className='Btn' onClick={<Checkout />}> Finish </button>
+                    <button className='Btn' onClick={() => navigate('/checkout')}> Finish </button>
                 </div>
             </div>
         )}

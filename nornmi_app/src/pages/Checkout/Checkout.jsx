@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './Checkout.css'
 
 //Import Firebase
 import { db } from '../../firebase/FirebaseConfig';
@@ -35,8 +36,8 @@ const Checkout = () => {
     };
 
     return (
-        <div style={styles.containerShop}>
-            <h1>Shop</h1>
+        <div className='FormContainer'>
+            <h1>Please, complete with your personal information</h1>
             <form className="FormContainer" onSubmit={onSubmit}>
                 <TextField
                 placeholder="Name"
@@ -59,9 +60,7 @@ const Checkout = () => {
                 value={values.email}
                 onChange={onChange}
                 />
-                <button className="btnASendAction" type="submit">
-                Send
-                </button>
+                <button className="btnASendAction btn" type="submit"> Send </button>
             </form>
             {purchaseID.length ? <MessageSuccess purchaseID={purchaseID} /> : null}
         </div>

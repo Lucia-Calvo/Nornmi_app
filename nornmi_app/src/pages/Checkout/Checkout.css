@@ -1,0 +1,22 @@
+.FormContainer{
+    width: 100%;
+    height: 100%;
+}
+
+.FormContainer h1{
+    color: #435C52;
+    font-size: 40px;
+    font-family: 'Raleway', sans-serif;
+    margin: 80px 0px 30px 20px;
+}
+
+.FormContainer{
+    margin-left: 10px;
+}
+
+.btn{
+    border: 4px solid #435C52;
+    height: 7vh;
+    width: 8vw;
+    font-size: 18px;
+}
