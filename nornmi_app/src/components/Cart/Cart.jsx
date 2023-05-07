@@ -3,9 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import CartItem from './CartItem';
 import './Cart.css';
+import Checkout from '../../pages/Checkout/Checkout';
 
 const Cart = () => {
-    const { cart, cartTotal, emptyCart } = useCart();
+    const { cart, cartTotal, emptyCart} = useCart();
     const navigate = useNavigate();
     console.log(cart);
 
@@ -26,7 +27,7 @@ const Cart = () => {
                 <span>Total : ${cartTotal()}</span>
                 <div className='btnContainer'>
                     <button className='Btn' onClick={emptyCart}> Clear bag </button>
-                    <button className='Btn' onClick={() => console.log( 'Aca vamos a llevar a otro componente que va a hacer  la logica de generar una orden')}> Finish </button>
+                    <button className='Btn' onClick={<Checkout />}> Finish </button>
                 </div>
             </div>
         )}
